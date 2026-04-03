@@ -1,0 +1,5 @@
+score_cumule(joueurs, 0) = 0
+score_cumule(joueurs, 1) = 0 + 93  (David)  = 93
+score_cumule(joueurs, 2) = 0 + 93 + 91  (Bob)  = 184
+fib_naif(40) = 15194284803 Temps :  14.029 s
+fib_memo(40) = 15194284803 Temps :  0.000043 s
