@@ -40,11 +40,13 @@ def lesscores(liste_joueurs):
                 joueurs_choisi.append(j['nom'])
 
     if len(equipe_A) < 3 or len(equipe_B) < 3:
-        print("Erreur : Les équipes sont impossibles à faire.")
+        print("Les équipes sont impossibles à faire.")
     return equipe_A, equipe_B
 
 if __name__ == "__main__":
     a, b = lesscores(joueurs)
+    print(f"score total: {sum(j['score'] for j in a) + sum(j['score'] for j in b)}") #pour aider avec tableau
+    print(f"budget total: {sum(j['salaire'] for j in a) + sum(j['salaire'] for j in b)}") #pour aider avec tableau
     
     print(f"Équipe A: {[j['nom'] for j in a]} (Score total: {sum(j['score'] for j in a)})")
     print(f"Équipe B: {[j['nom'] for j in b]} (Score total: {sum(j['score'] for j in b)})")
