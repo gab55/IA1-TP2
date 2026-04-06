@@ -55,6 +55,8 @@ def strategie_alternance(liste_joueurs):
 
 if __name__ == "__main__":
     team_a, team_b = strategie_alternance(joueurs)
+    print(f"score total: {sum(j['score'] for j in team_a) + sum(j['score'] for j in team_b)}") #pour aider avec tableau
+    print(f"budget total: {sum(j['salaire'] for j in team_a) + sum(j['salaire'] for j in team_b)}") #pour aider avec tableau
     
     print(f"Équipe A: {[j['nom'] for j in team_a]} (Score total: {sum(j['score'] for j in team_a)})")
     print(f"Équipe B: {[j['nom'] for j in team_b]} (Score total: {sum(j['score'] for j in team_b)})")
