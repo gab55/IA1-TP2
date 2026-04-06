@@ -27,6 +27,7 @@ def tableau_2():
 
     plt.tight_layout()
     plt.show()
+    plt.savefig("plt/tableau_2.png")
 
 if __name__ == "__main__":
     tableau_2()

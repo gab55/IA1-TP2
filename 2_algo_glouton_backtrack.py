@@ -66,6 +66,9 @@ def lesscores(liste_joueurs):
 
 if __name__ == "__main__":
     a, b = lesscores(joueurs)
+    print(f"score total: {sum(j['score'] for j in a) + sum(j['score'] for j in b)}")  # pour aider avec tableau
+    print(f"budget total: {sum(j['salaire'] for j in a) + sum(j['salaire'] for j in b)}")  # pour aider avec tableau
 
-    print(f"Équipe A: {[j['nom'] for j in a]} (Score total: {sum(j['score'] for j in a)})")
-    print(f"Équipe B: {[j['nom'] for j in b]} (Score total: {sum(j['score'] for j in b)})")
+    print(f"Équipe A: {[j['nom'] for j in a]} (Score: {sum(j['score'] for j in a)})")
+    print(f"Équipe B: {[j['nom'] for j in b]} (Score: {sum(j['score'] for j in b)})")
+
