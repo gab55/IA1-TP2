@@ -20,8 +20,8 @@ def lebudget(equipe_a, equipe_b, nouveau_joueur):
     depenses = sum(j['salaire'] for j in equipe_a) + sum(j['salaire'] for j in equipe_b)
     return (depenses + nouveau_joueur['salaire']) <= BUDGET
 
-def lesscores(liste_joueurs):
-    joueurs_tries = sorted(liste_joueurs, key=lambda j: j["score"], reverse=True) #jai utiliser le trie ici
+def lesratios(liste_joueurs):
+    joueurs_tries = sorted(liste_joueurs, key=lambda j: j["score"] / j["salaire"], reverse=True) #jai le rapport qualité prix ici
     
     equipe_A = []
     equipe_B = []
@@ -40,12 +40,12 @@ def lesscores(liste_joueurs):
                 joueurs_choisi.append(j['nom'])
 
     if len(equipe_A) < 3 or len(equipe_B) < 3:
-        print("Erreur : Les équipes sont impossibles à faire.")
+        print("Erreur : Même avec les ratios, impossible de former les équipes.")
     
     return equipe_A, equipe_B
 
 if __name__ == "__main__":
-    a, b = lesscores(joueurs)
+    a, b = lesratios(joueurs)
     
-    print(f"Équipe A: {[j['nom'] for j in a]} (Score total: {sum(j['score'] for j in a)})")
-    print(f"Équipe B: {[j['nom'] for j in b]} (Score total: {sum(j['score'] for j in b)})")
+    print(f"Équipe A: {[j['nom'] for j in a]} (Score: {sum(j['score'] for j in a)})")
+    print(f"Équipe B: {[j['nom'] for j in b]} (Score: {sum(j['score'] for j in b)})")
