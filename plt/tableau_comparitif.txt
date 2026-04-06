@@ -1,0 +1,6 @@
+                         Tableau Comparatif                        
+                  Score Total    Budget Utilisé    Écart vs optimal
+PuLP (optimal)            524              8450         0 pts. 0.00
+Glouton                   524              8450         0 pts. 0.00
+Ratio                     521              8300       -3 pts. -0.57
+Salaire                   516              7400       -8 pts. -1.53

@@ -1,0 +1,29 @@
+Resultats Glouton
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Glouton simple trop glouton (a) (equipes invalide)
+score total: 446
+budget total: 7750
+Équipe A: ['David', 'Bob', 'Alice'] (Score total: 272)
+Équipe B: ['Hugo', 'Grace'] (Score total: 174)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Glouton simple avec backtrack (a)
+
+score total: 524
+budget total: 8450
+Équipe A: ['David', 'Bob', 'Alice'] (Score: 272)
+Équipe B: ['Hugo', 'Clara', 'Emma'] (Score: 252)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Glouton Meilleur ratio score / salaire (b)
+score total: 516
+budget total: 7400
+Équipe A: ['Emma', 'Clara', 'Grace'] (Score: 248)
+Équipe B: ['Alice', 'Hugo', 'Bob'] (Score: 268)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Glouton Alternance score / ratio (d)
+score total: 521
+budget total: 8300
+Équipe A: ['David', 'Emma', 'Bob'] (Score total: 263)
+Équipe B: ['Clara', 'Hugo', 'Grace'] (Score total: 258)
