@@ -14,11 +14,11 @@ POIDS = 250
 
 def lepoids(equipe, joueur):
     poids_actuel = sum(j['poids'] for j in equipe)
-    return (poids_actuel + joueur['poids']) <= POIDS
+    return (poids_actuel + joueur['poids'])
 
 def lebudget(equipe_a, equipe_b, nouveau_joueur):
     depenses = sum(j['salaire'] for j in equipe_a) + sum(j['salaire'] for j in equipe_b)
-    return (depenses + nouveau_joueur['salaire']) <= BUDGET
+    return (depenses + nouveau_joueur['salaire'])
 
 def lesscores(liste_joueurs):
     joueurs_tries = sorted(liste_joueurs, key=lambda j: j["score"], reverse=True) #jai utiliser le trie ici
