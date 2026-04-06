@@ -29,13 +29,13 @@ def lesratios(liste_joueurs):
 
     for j in joueurs_tries:
         if len(equipe_A) < 3:
-            if lepoids(equipe_A, j) and lebudget(equipe_A, equipe_B, j):
+            if lepoids(equipe_A, j) <= POIDS and lebudget(equipe_A, equipe_B, j) <= BUDGET:
                 equipe_A.append(j)
                 joueurs_choisi.append(j['nom'])
 
     for j in joueurs_tries:
         if j['nom'] not in joueurs_choisi and len(equipe_B) < 3:
-            if lepoids(equipe_B, j) and lebudget(equipe_A, equipe_B, j):
+            if lepoids(equipe_B, j) <= POIDS and lebudget(equipe_A, equipe_B, j) <= BUDGET:
                 equipe_B.append(j)
                 joueurs_choisi.append(j['nom'])
 

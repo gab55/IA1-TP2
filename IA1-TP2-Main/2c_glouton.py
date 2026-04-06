@@ -24,7 +24,6 @@ def strategie_alternance(liste_joueurs):
     disponibles = liste_joueurs.copy()
     equipe_A = []
     equipe_B = []
-    
     count = 0
 
     while (len(equipe_A) < 3 or len(equipe_B) < 3) and disponibles:
@@ -38,7 +37,7 @@ def strategie_alternance(liste_joueurs):
 
         joueur_trouve = False
         for j in joueurs_tries:
-            if lepoids(equipe_actuelle, j) and lebudget(equipe_A, equipe_B, j):
+            if lepoids(equipe_actuelle, j) <= POIDS and lebudget(equipe_A, equipe_B, j) <= BUDGET:
                 equipe_actuelle.append(j)
                 disponibles.remove(j)
                 count += 1            
