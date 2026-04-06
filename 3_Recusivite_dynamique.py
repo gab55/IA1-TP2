@@ -1,5 +1,5 @@
 import time
-
+import matplotlib.pyplot as plt
 
 joueurs = [
 {"nom": "Alice", "score": 88, "salaire": 1200, "poids": 72},
@@ -38,41 +38,55 @@ def score_cumule(liste, k):
 # fib(n) = fib(n-1) + fib(n-2)
 nums = [93, 91]
 
-def fib_naif(n):
-    if n == 0:
-        return nums[0]
-    if n == 1:
-        return nums[1]
-    resultat = fib_naif(n-1) + fib_naif(n-2)
-    return resultat
+def call_fib_naif(n):
+    calls = 0
+    def fib_naif(n):
+        nonlocal calls
+        calls += 1
+        if n == 0:
+            return nums[0]
+        if n == 1:
+            return nums[1]
+        resultat = fib_naif(n-1) + fib_naif(n-2)
+        return resultat
+    resultat = fib_naif(n)
+    return resultat, calls
 
 
-
-def fib_memo(n, memo={}):
-    if n == 0:
-        return nums[0]
-    if n == 1:
-        return nums[1]
-    if n in memo:
+def call_fib_memo(n):
+    calls = 0
+    def fib_memo(n, memo={}):
+        nonlocal calls
+        calls += 1
+        if n == 0:
+            return nums[0]
+        if n == 1:
+            return nums[1]
+        if n in memo:
+            return memo[n]
+        memo[n] = fib_memo(n - 1, memo) + fib_memo(n - 2, memo)
         return memo[n]
-    memo[n] = fib_memo(n - 1, memo) + fib_memo(n - 2, memo)
-    return memo[n]
-
+    resultat = fib_memo(n)
+    return resultat, calls
 
 
 
 
 if __name__ == "__main__":
+    print("3 - A")
     total, expression = score_cumule(joueurs_tries, 2)
+    print("")
 
-    n= 35
-    # debut = time.perf_counter()
-    # resultat = fib_naif(n)
-    # fin = time.perf_counter()
-    # print(f"fib_naif({n}) = {resultat} Temps : { fin - debut: .3f} s")
+    print("3 - B")
+    n= 10
+    debut = time.perf_counter()
+    resultat, calls = call_fib_naif(n)
+    fin = time.perf_counter()
+    print(f"fib_naif({n}) = {resultat} en {calls} calls et { fin - debut: .3f} s")
 
 
     debut = time.perf_counter()
-    resultat = fib_memo(n)
+    resultat, calls = call_fib_memo(n)
     fin = time.perf_counter()
-    print(f"fib_memo({n}) = { resultat} Temps : { fin - debut: .6f} s")
+    print(f"fib_memo({n}) = {resultat} en {calls} calls et { fin - debut: .3f} s")
+
