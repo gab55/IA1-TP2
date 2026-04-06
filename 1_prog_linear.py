@@ -70,7 +70,6 @@ print("statut : \n\t", LpStatus[prob.status])
 # afficher le resultats
 
 def team_total(team):
-
     score = sum(joueur["score"]* variables[joueur["nom"]][team].varValue for joueur in joueurs)
     salaire = sum(joueur["salaire"]* variables[joueur["nom"]][team].varValue for joueur in joueurs)
     return score , salaire
