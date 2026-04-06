@@ -14,11 +14,11 @@ POIDS = 250
 
 def lepoids(equipe, nouveau_joueur):
     poids_total = sum(j['poids'] for j in equipe)
-    return (poids_total + nouveau_joueur['poids']) <= POIDS
+    return (poids_total + nouveau_joueur['poids'])
 
 def lebudget(equipe_a, equipe_b, nouveau_joueur):
     depenses = sum(j['salaire'] for j in equipe_a) + sum(j['salaire'] for j in equipe_b)
-    return (depenses + nouveau_joueur['salaire']) <= BUDGET
+    return (depenses + nouveau_joueur['salaire'])
 
 def strategie_alternance(liste_joueurs):
     disponibles = liste_joueurs.copy()
