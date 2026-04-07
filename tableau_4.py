@@ -15,9 +15,10 @@ rects2 = ax.bar(x + width/2, equipe_B, width, label='Équipe B', color='salmon')
 
 ax.set_ylabel('Valeur de 0 a 1')
 ax.set_title('Comparaison équipes')
+ax.axhline(y=1, color='black', linestyle='--', alpha=0.6, label='Max')
 ax.set_xticks(x)
 ax.set_xticklabels(categories)
-ax.set_ylim(0, 1.1)
+# ax.set_ylim(0, 1.1)
 ax.legend()
 
 plt.show()
