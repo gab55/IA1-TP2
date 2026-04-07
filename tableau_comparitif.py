@@ -51,9 +51,6 @@ joueurs_score_salaire = form_equipe(module_glu_score_salaire.lesratios)
 joueurs_score_ratio = form_equipe(module_glu_score_ratio.strategie_alternance)
 
 
-
-
-
 def total_equipe(equipe):
     score_total = 0
     poids_total = 0

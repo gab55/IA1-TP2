@@ -4,14 +4,17 @@ def score_total():
     scores = {
         "Meilleur ratio score / salaire": 516,
         "Alternance score / ratio": 521,
+        "Glouton": 524,
         "PuLP": 524
     }
 
-    couleurs = ['steelblue', 'salmon', 'green']
+    couleurs = ['steelblue', 'salmon','green']
 
     plt.figure(figsize=(8, 6))
 
     for i, (nom, score) in enumerate(scores.items()):
+        if nom == "PuLP":
+            break
         plt.bar(nom, score, color=couleurs[i], label=f"{nom} ({score})")
 
     score_optimal = scores["PuLP"]
