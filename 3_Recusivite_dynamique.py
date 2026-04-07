@@ -78,7 +78,7 @@ if __name__ == "__main__":
     print("")
 
     print("3 - B")
-    n= 10
+    n= 35
     debut = time.perf_counter()
     resultat, calls = call_fib_naif(n)
     fin = time.perf_counter()

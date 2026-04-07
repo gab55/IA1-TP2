@@ -3,3 +3,15 @@ score_cumule(joueurs, 1) = 0 + 93  (David)  = 93
 score_cumule(joueurs, 2) = 0 + 93 + 91  (Bob)  = 184
 fib_naif(40) = 15194284803 Temps :  14.029 s
 fib_memo(40) = 15194284803 Temps :  0.000043 s
+
+
+ 3 - A
+score_cumule(joueurs, 0) = 0
+score_cumule(joueurs, 1) = 0 + 93  (David)  = 93
+score_cumule(joueurs, 2) = 0 + 93 + 91  (Bob)  = 184
+
+3 - B
+fib_naif(35) = 1370067806 en 29860703 calls et  1.834 s
+fib_memo(35) = 1370067806 en 69 calls et  0.000 s
+
+Process finished with exit code 0
